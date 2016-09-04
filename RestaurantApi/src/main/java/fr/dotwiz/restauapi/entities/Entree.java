@@ -1,6 +1,7 @@
 package fr.dotwiz.restauapi.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="ENTREE")
@@ -23,19 +26,14 @@ public class Entree implements Serializable {
 	
 	private double prix;
 	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dateCreation;
+	
 	@ManyToOne
 	@JoinColumn(name="ref_entree_menu")
 	private Menu menu;
 
 	public Entree() {
-	}
-	
-	public Menu getMenu() {
-		return menu;
-	}
-
-	public void setMenu(Menu menu) {
-		this.menu = menu;
 	}
 
 	public Integer getRefEntree() {
@@ -61,5 +59,21 @@ public class Entree implements Serializable {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-		
+
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
 }
