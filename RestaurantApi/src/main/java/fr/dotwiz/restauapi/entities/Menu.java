@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,13 +19,13 @@ public class Menu implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer refMenu;
 	
-	@OneToMany(mappedBy="menu")
-	private Collection<Entrance> entrances;
+	@OneToMany(mappedBy="menu", fetch=FetchType.LAZY)
+	private Collection<Entree> entrees;
 	
-	@OneToMany(mappedBy="menu")
+	@OneToMany(mappedBy="menu", fetch=FetchType.LAZY)
 	private Collection<Plat> plats;
 	
-	@OneToMany(mappedBy="menu")
+	@OneToMany(mappedBy="menu", fetch=FetchType.LAZY)
 	private Collection<Dessert> desserts;
 
 	public Menu() {
@@ -38,12 +39,12 @@ public class Menu implements Serializable {
 		this.refMenu = refMenu;
 	}
 
-	public Collection<Entrance> getEntrances() {
-		return entrances;
+	public Collection<Entree> getEntrees() {
+		return entrees;
 	}
 
-	public void setEntrances(Collection<Entrance> entrances) {
-		this.entrances = entrances;
+	public void setEntrees(Collection<Entree> entrees) {
+		this.entrees = entrees;
 	}
 
 	public Collection<Plat> getPlats() {

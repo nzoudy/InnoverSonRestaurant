@@ -22,9 +22,9 @@ public class Dessert implements Serializable{
 	private String nameDessert;
 
 	private double price;
-	
+
 	@ManyToOne
-	@JoinColumn(name="FK_refDessert")
+	@JoinColumn(name="ref_dessert_menu")
 	private Menu menu;
 	
 	public Dessert() {
@@ -34,11 +34,9 @@ public class Dessert implements Serializable{
 		return menu;
 	}
 
-
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
-
 
 	public Integer getRefDessert() {
 		return refDessert;

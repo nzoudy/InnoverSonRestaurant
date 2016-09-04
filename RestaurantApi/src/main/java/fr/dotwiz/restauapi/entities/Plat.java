@@ -19,27 +19,24 @@ public class Plat implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer refPlat;
 
-	private String namePlat;
+	private String nomPlat;
 
-	private double price;
-	
+	private double prix;
+
 	@ManyToOne
-	@JoinColumn(name="FK_refPlat")
+	@JoinColumn(name="ref_plat_menu")
 	private Menu menu;
 	
 	public Plat() {
 	}
 
-	
 	public Menu getMenu() {
 		return menu;
 	}
 
-
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
-
 
 	public Integer getRefPlat() {
 		return refPlat;
@@ -49,20 +46,20 @@ public class Plat implements Serializable {
 		this.refPlat = refPlat;
 	}
 
-	public String getNamePlat() {
-		return namePlat;
+	public String getNomPlat() {
+		return nomPlat;
 	}
 
-	public void setNamePlat(String namePlat) {
-		this.namePlat = namePlat;
+	public void setNomPlat(String nomPlat) {
+		this.nomPlat = nomPlat;
 	}
 
-	public double getPrice() {
-		return price;
+	public double getPrix() {
+		return prix;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPrix(double prix) {
+		this.prix = prix;
 	}
 		
 }

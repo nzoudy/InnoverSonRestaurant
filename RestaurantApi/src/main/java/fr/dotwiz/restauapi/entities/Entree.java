@@ -13,19 +13,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="MENU")
-public class Entrance implements Serializable {
+public class Entree implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer refEntrance;
+	private Integer refEntree;
 	
-	private String nameEntrance;
+	private String nomEntree;
 	
-	private double price;
+	private double prix;
 	
 	@ManyToOne
-	@JoinColumn(name="FK_refEntrance")
+	@JoinColumn(name="ref_entree_menu")
 	private Menu menu;
+
+	public Entree() {
+	}
 	
 	public Menu getMenu() {
 		return menu;
@@ -35,31 +38,28 @@ public class Entrance implements Serializable {
 		this.menu = menu;
 	}
 
-	public Entrance() {
+	public Integer getRefEntree() {
+		return refEntree;
 	}
 
-	public Integer getRefEntrance() {
-		return refEntrance;
+	public void setRefEntree(Integer refEntree) {
+		this.refEntree = refEntree;
 	}
 
-	public void setRefEntrance(Integer refEntrance) {
-		this.refEntrance = refEntrance;
+	public String getNomEntree() {
+		return nomEntree;
 	}
 
-	public String getNameEntrance() {
-		return nameEntrance;
+	public void setNomEntree(String nomEntree) {
+		this.nomEntree = nomEntree;
 	}
 
-	public void setNameEntrance(String nameEntrance) {
-		this.nameEntrance = nameEntrance;
+	public double getPrix() {
+		return prix;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPrix(double prix) {
+		this.prix = prix;
 	}
 		
 }
