@@ -24,7 +24,7 @@ public class Menu implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer refMenu;
 	
-	private String nomDuMenu;
+	private String nomMenu;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateCreation;
@@ -53,12 +53,12 @@ public class Menu implements Serializable {
 		this.refMenu = refMenu;
 	}
 
-	public String getNomDuMenu() {
-		return nomDuMenu;
+	public String getNomMenu() {
+		return nomMenu;
 	}
 
-	public void setNomDuMenu(String nomDuMenu) {
-		this.nomDuMenu = nomDuMenu;
+	public void setNomMenu(String nomMenu) {
+		this.nomMenu = nomMenu;
 	}
 
 	public Date getDateCreation() {

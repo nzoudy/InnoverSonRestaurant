@@ -22,7 +22,7 @@ public class Dessert implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer refDessert;
 
-	private String nameDessert;
+	private String nomDessert;
 
 	private double price;
 
@@ -44,12 +44,12 @@ public class Dessert implements Serializable{
 		this.refDessert = refDessert;
 	}
 
-	public String getNameDessert() {
-		return nameDessert;
+	public String getNomDessert() {
+		return nomDessert;
 	}
 
-	public void setNameDessert(String nameDessert) {
-		this.nameDessert = nameDessert;
+	public void setNomDessert(String nomDessert) {
+		this.nomDessert = nomDessert;
 	}
 
 	public double getPrice() {
