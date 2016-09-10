@@ -14,6 +14,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 @Entity
 @Table(name="ENTREE")
 public class Entree implements Serializable {
@@ -68,10 +71,12 @@ public class Entree implements Serializable {
 		this.dateCreation = dateCreation;
 	}
 
+	@JsonIgnore
 	public Menu getMenu() {
 		return menu;
 	}
 
+	@JsonSetter
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
